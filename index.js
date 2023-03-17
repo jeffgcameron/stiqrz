@@ -1,15 +1,27 @@
 var _status;
 
 function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-  console.log('statusChangeCallback');
   _status =  response.status
   console.log(response)
   if (_status === 'connected') {   // Logged into your webpage and Facebook.
     testAPI();  
-  } else {                                 // Not logged into your webpage or we are unable to tell.
-    document.getElementById('status').innerHTML = 'Please log ' +
-      'into this webpage.';
+    setLoginText(true);
+  } else {    
+    logout()                           // Not logged into your webpage or we are unable to tell.
+    setLoginText(false);
   }
+}
+
+function logout() {
+  FB.logout(function(response) {
+    console.log(response);
+  });
+}
+
+function setLoginText(isSignedIn) {
+  var login = document.querySelector('.login-logout')
+  var loginText = (isSignedIn) ? 'Sign Out' : 'Sign In'
+  login.textContent =  loginText
 }
 
 function checkLoginState() {               // Called when a person is finished with the Login Button.
@@ -33,9 +45,8 @@ window.fbAsyncInit = function() {
 
 function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
   console.log('Welcome!  Fetching your information.... ');
-  FB.api('/me', {fields: 'first_name,last_name,email,picture,phone'}, function(response) {
+  FB.api('/me', {fields: 'first_name,last_name,email,picture.type(large),location,link'}, function(response) {
     displayProfile(response);
-    console.log('Successful login for: ' + response.name);
   });
 }
 
@@ -44,10 +55,21 @@ function displayProfile(data) {
   var profilePicture  = document.getElementById('profile-picture');
   var name            = document.getElementById('name');
   var email           = document.getElementById('email');
+  var emailLink       = document.getElementById('email-link');
   var fbLink          = document.getElementById('fb-link');
-  profilePicture.src  = data.picture.data.url;
-  name.innerHTML      = data.first_name + ' ' + data.last_name;
-  email.innerHTML     = data.email;
-  email.href          = 'mailto:' + data.email;
+  // var hometown        = document.getElementById('hometown');
+  var location        = document.getElementById('location');
 
+
+  profilePicture.src      = data.picture.data.url;
+  name.innerHTML          = data.first_name + ' ' + data.last_name;
+  location.innerHTML      = data.location.name;
+  // hometown.innerHTML      = data.hometown.name;
+  email.innerHTML         = data.email;
+  email.href              = 'mailto:' + data.email;
+  emailLink.href              = 'mailto:' + data.email;
+  console.log(fbLink);
+  fbLink.href             = data.link
+  
+  document.getElementById('profile').classList.remove('hidden')
 }

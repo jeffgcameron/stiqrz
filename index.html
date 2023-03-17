@@ -4,33 +4,64 @@
     <title>Facebook Login JavaScript Example</title>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
   </head>
-  <body>
+    <body>
 
-    <fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
-    <div id="status"></div>
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Stiqrz</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
 
-    <section id="profile">
-      <img src = 'https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/50577904_10218504630110664_9041018553079169024_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=mmgOdHa9KFkAX8SkmKV&_nc_ht=scontent-sea1-1.xx&oh=00_AfAnRY3bM7cUhtF4tztVngOM-c9_3Xw4aHOcPk76YXAcvg&oe=643C1611' id="profile-picture"/>
-      <div id="name">Jeff Cameron</div>
-      <a id="email" class="clickable" href="mailto: jeffcam12@gmail.com">jeffcam12@gmail.com</a>
-      <div id="fb-link"></div>
-      <div id="messager"></div>
-      <!-- <div id="status"></div>
-      <img id="profile-picture"/>
-      <div id="name"></div>
-      <a id="email"></a>
-      <div id="fb-link"></div>
-      <div id="messager"></div> -->
-    </section>
+              <li class="nav-item">
+                <a class="nav-link login-logout"></a>
+              </li>
 
-    <!-- scrips -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
-  </body>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
+
+      <section id="profile" class="hidden">
+        <div id="status"></div>
+        <img id="profile-picture"/>
+        <div id="name"></div>
+        <div><i class="fa-solid fa-location-dot"></i><span id="location"></span></div>
+        <a id="email" class="clickable"></a>
+        <div id="messager"></div>
+        <a id="fb-link"><i class="fa-brands fa-square-facebook clickable icon"></i></a>
+        <a id="email-link"><i class="fa-solid fa-envelope clickable icon"></i></a>
+        
+      </section>
+
+
+      <!-- scrips -->
+      <script src="jquery-3.6.3.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      <script src="index.js"></script>
+      <script src="https://kit.fontawesome.com/098db39194.js" crossorigin="anonymous"></script>
+    </body>
 </html>

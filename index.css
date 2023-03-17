@@ -8,19 +8,46 @@ body {
     text-align: center;
 }
 
-#profile #profile-picture {
+#profile-picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
 }
+
 
 #profile #name {
     font-size: 2em;
     font-weight: bold;
 }
 
+#profile .fa-solid {
+    padding-right: .5em;
+}
+
 .clickable {
     font-weight: bold;
     text-decoration: none;
     color: #3d5e73;
+}
+
+.clickable.icon {
+    font-size: 1.5em;
+    padding: .5em;
+}
+
+.navbar {
+    background-color: #3d5e73;
+}
+
+.nav-link {
+    color: rgb(190, 187, 187);
+}
+
+.navbar-nav .nav-link.active {
+    color: white;
+    font-weight: italic;
+}
+
+.hidden {
+    display: none;
 }
