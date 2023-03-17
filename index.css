@@ -9,14 +9,12 @@ body {
 }
 
 #profile-picture {
-    width: 150px;
-    height: 150px;
     border-radius: 50%;
 }
 
 
 #profile #name {
-    font-size: 2em;
+    font-size: 24px;
     font-weight: bold;
 }
 
