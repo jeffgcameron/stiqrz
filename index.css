@@ -1,0 +1,26 @@
+body {
+    font-family: 'Economica', sans-serif;
+}
+
+#profile {
+    margin-top: 2em;
+    align-items: center;
+    text-align: center;
+}
+
+#profile #profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#profile #name {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.clickable {
+    font-weight: bold;
+    text-decoration: none;
+    color: #3d5e73;
+}
