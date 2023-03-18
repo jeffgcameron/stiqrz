@@ -64,3 +64,25 @@ body {
 .hidden {
     display: none !important;
 }
+
+.footer-home-page {
+    padding-left: 1em;
+    color: whitesmoke;
+    background-color: #3d5e73;
+    margin-top: 100vh;
+}
+
+.clickable-footer {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.footer-icons {
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.footer-icons .clickable-footer{
+    padding: .5em .5em 0 .5em;
+}
+
