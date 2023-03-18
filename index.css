@@ -1,3 +1,8 @@
+html {
+    height: 100vh;
+    position:relative;
+}
+
 body {
     font-family: 'Economica', sans-serif;
 }
@@ -12,6 +17,16 @@ body {
     border-radius: 50%;
 }
 
+#facebook-login {
+    position: absolute;
+    top: 45%;
+    margin-left: -70.5px;
+    left: 50%;
+}
+
+#facebook-login > span{
+    height: 1000px;
+}
 
 #profile #name {
     font-size: 24px;
@@ -47,5 +62,5 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
