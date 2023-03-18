@@ -29,8 +29,10 @@ function setDisplay(isSignedIn) {
 
   var setFbLoginDisplay = function() {
       var fbLogin    = document.getElementById('facebook-login')
+      var fbPrompt   = document.getElementById('sign-in-prompt')
       var action     = (isSignedIn) ? 'add' : 'remove';
       fbLogin.classList[action]('hidden')
+      fbPrompt.classList[action]('hidden')
   }
 
   setNavLoginText();

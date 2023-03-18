@@ -42,8 +42,12 @@
           </div>
         </div>
       </nav>
+      <div id="sign-in-prompt">
+        <p>Welcome to Stiqrz!</p>
+        <p>Please click below to login/sign up with facebook</p>
+      </div>
+      <fb:login-button id="facebook-login" scope="public_profile" onlogin="checkLoginState();">Continue with Facebook</fb:login-button>
 
-      <fb:login-button id="facebook-login" scope="public_profile" onlogin="checkLoginState();">Login with Facebook</fb:login-button>
 
       <section id="profile" class="hidden">
         <div id="status"></div>
